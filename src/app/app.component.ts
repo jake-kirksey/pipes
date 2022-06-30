@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,17 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
   public name = '';
   public date:  string = '';
 //  public amount: number;
 
-  onNameChange(event: string) {
-    this.name = event;
+  onNameChange(event: any) {
+    this.name = event.target.value;
     console.log(this.name)
   }
-  onDateChange(event: string) {
-    this.date = event;
+  onDateChange(event: any) {
+    this.date = event.target.value;
     console.log(this.date)
   }
 }
